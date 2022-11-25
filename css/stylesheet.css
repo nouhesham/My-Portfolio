@@ -117,3 +117,29 @@ section {
   font-size: 1.5em;
   color: white;
 }
+
+.service-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  #header {
+    background-color: rgb(181, 18, 186);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+  section {
+    padding: 50px;
+  }
+}
