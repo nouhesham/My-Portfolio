@@ -13,7 +13,7 @@ const bright = function () {
   // console.log(x);
   if (x === 0) {
     main.style.backgroundImage = "url(images/second.jpeg)";
-    header.style.backgroundColor = "lightblue";
+    header.style.backgroundColor = "purple";
     console.log(main.style);
   } else if (x === 1) {
     main.style.backgroundImage = "url(images/firstphoto.jpeg)";
