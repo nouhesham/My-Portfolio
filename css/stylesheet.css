@@ -7,6 +7,18 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 400px;
+  }
+
+  to {
+    margin-left: 31%;
+    width: 400px;
+  }
+}
 #header {
   background-color: rgb(181, 18, 186);
   width: 100%;
@@ -117,17 +129,86 @@ section {
   font-size: 1.5em;
   color: white;
 }
+/* /* .service  */
 
+.special-heading {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  letter-spacing: 0.2em;
+  /* color: purple; */
+  background: linear-gradient(180deg, purple 50%, black 75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: slidein;
+  animation-duration: 2s;
+  padding-top: 50px;
+  /* display: block; */
+  /* box-shadow: 0 5px 30px purple; */
+}
 .service-flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .column {
   justify-content: center;
   text-align: center;
 }
+
+.service-flex i {
+  font-size: 80px;
+  color: purple;
+  padding-bottom: 50px;
+  margin: 70px;
+}
+.column {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  width: 21.25em;
+  box-shadow: 0px 5px 25px purple;
+  padding: 25px;
+  margin: 10px;
+  cursor: pointer;
+  transition-duration: 2s ease;
+}
+
+.column:hover {
+  transform: scale(1.1);
+}
+.column h3 {
+  padding-top: 30px;
+  margin: 30px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: indigo;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+#projecttitle {
+  font-size: 2.2em;
+  font-weight: 500;
+  background-color: white;
+  flex-wrap: wrap;
+  letter-spacing: 0.2em;
+  color: palevioletred;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  box-shadow: 0 5px 25px purple;
+  text-transform: uppercase;
+}
+#projecttitle:hover {
+  transform: translate(10px);
+  transition-duration: 0.5s;
+}
+
 @media (max-width: 700px) {
   #header {
     background-color: rgb(181, 18, 186);
