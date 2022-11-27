@@ -10,13 +10,21 @@
 
 @keyframes slidein {
   from {
-    margin-left: 100%;
-    width: 400px;
+    margin-left: 90%;
+    width: 300px;
   }
 
   to {
     margin-left: 31%;
     width: 400px;
+  }
+}
+@keyframes glow {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
   }
 }
 #header {
@@ -117,9 +125,16 @@ section {
   transition: 1s ease;
 }
 .Main .main-btn:hover {
-  background-color: indigo;
+  z-index: 1;
+  border-color: transparent;
+  background: linear-gradient(90deg, rgb(206, 182, 206), indigo, pink);
+  color: black;
+  background-size: 400%;
   transform: scale(1.1);
+  box-shadow: 0 0 15px white;
+  animation: glow 12s linear ease;
 }
+
 .Main .links {
   margin-top: 10px;
   margin-left: 10px;
@@ -164,52 +179,248 @@ section {
 
 .service-flex i {
   font-size: 80px;
-  color: purple;
+  color: white;
   padding-bottom: 50px;
   margin: 70px;
 }
 .column {
-  background-color: antiquewhite;
+  background-color: #ee82ee;
   border-radius: 10px;
   width: 21.25em;
   box-shadow: 0px 5px 25px purple;
   padding: 25px;
   margin: 10px;
   cursor: pointer;
-  transition-duration: 2s ease;
+  transition-duration: 0.5s ease;
+  position: relative;
 }
 
 .column:hover {
   transform: scale(1.1);
 }
+.column:hover h3 {
+  display: block;
+}
 .column h3 {
   padding-top: 30px;
   margin: 30px;
   text-align: center;
-  letter-spacing: 0.2em;
-  color: indigo;
-  font-weight: 600;
-  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  color: black;
+  font-weight: 1000;
+  font-size: 1.3em;
+  /* display: none; */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: rgb(255, 255, 255, 0.4);
+  position: absolute;
+  inset: 0;
+  text-align: center;
+}
+.column h3,
+.column img {
+  transition: 200ms ease-in-out;
+}
+
+.column .fade {
+  opacity: 0;
+}
+.column:hover .fade {
+  opacity: 1;
+}
+
+.column:hover .blur {
+  filter: blur(5px);
 }
 #projecttitle {
   font-size: 2.2em;
   font-weight: 500;
-  background-color: white;
+
+  border-radius: 20px;
   flex-wrap: wrap;
   letter-spacing: 0.2em;
-  color: palevioletred;
+  /* color: palevioletred; */
+  background: linear-gradient(90deg, indigo 70%, black 20%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: white;
 
   writing-mode: vertical-rl;
   text-orientation: upright;
-  box-shadow: 0 5px 25px purple;
+  box-shadow: 0 5px 25px white;
   text-transform: uppercase;
 }
 #projecttitle:hover {
   transform: translate(10px);
   transition-duration: 0.5s;
 }
+.projects-flex {
+  display: grid;
+  display: grid;
+  grid-template-columns: 70px 2fr 2fr;
+  grid-gap: 40px;
+  text-align: center;
+  justify-content: center;
+  grid-auto-flow: row;
+  min-height: 14em;
+  grid-auto-flow: column;
+}
+#photo {
+  width: 100%;
+  min-height: 14em;
+  /* position: fixed; */
+}
+.column-proj:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.projects-flex .column-proj {
+  border: 5px solid purple;
+  box-shadow: 0px 5px 30px white;
+  border-radius: 10px;
+  transition: 1s ease;
+  height: 400px;
+  margin: 10px;
+  overflow: hidden;
+}
+.column-proj h3 {
+  color: indigo;
+  margin: 10px;
+  /* display: none; */
+  padding: 10px;
+}
+.column-proj .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: purple;
+  margin: 30px;
+  font-size: 1em;
+  font-weight: 500;
+  /* padding: 6px; */
+}
 
-@media (max-width: 700px) {
+.projects {
+  background: linear-gradient(white, #dda0dd);
+}
+
+.info a {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.info a:hover {
+  color: white;
+}
+.contactme {
+  background: linear-gradient(purple, white);
+}
+#collab {
+  font-size: 1.4em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: linear-gradient(180deg, indigo 20%, black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contactme a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.contactme .email {
+  font-size: 1.2em;
+  color: purple;
+  font-weight: 600;
+  padding: 10px;
+}
+.contactme a:hover {
+  background: linear-gradient(180deg, indigo 20%, black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#collab:hover {
+  color: white;
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wrapper .button {
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 0 25px indigo;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  float: left;
+  width: 50px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.wrapper .button .icon {
+  border-radius: 50px;
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  margin: 1px;
+
+  /* line-height: 60px; */
+}
+
+.wrapper .button .icon i {
+  width: 50px;
+  height: 40px;
+}
+
+.wrapper .button:hover {
+  width: 200px;
+}
+.wrapper .button i {
+  font-size: 2em;
+  color: black;
+}
+
+.wrapper .button:nth-child(2) i:hover {
+  color: blue;
+}
+.wrapper .button:nth-child(1) i:hover {
+  color: lightcoral;
+}
+.wrapper .button:nth-child(3) i:hover {
+  color: blue;
+}
+.wrapper .button:nth-child(3):hover .icon {
+  background: lightskyblue;
+}
+.wrapper .button:nth-child(2):hover .icon {
+  background: lightskyblue;
+}
+.wrapper .button:nth-child(1):hover .icon {
+  background: lightpink;
+}
+.wrapper .button:nth-child(1):hover span {
+  color: purple;
+  font-size: 1.2em;
+}
+.wrapper .button span {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: blue;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
   #header {
     background-color: rgb(181, 18, 186);
     width: 100%;
@@ -222,5 +433,30 @@ section {
   }
   section {
     padding: 50px;
+  }
+  .projects-flex {
+    display: grid;
+    grid-template-rows: 300px 2fr 2fr;
+    grid-template-columns: 300px;
+    grid-gap: 40px;
+    text-align: center;
+    justify-content: center;
+    grid-auto-flow: row;
+    min-height: 14em;
+    grid-auto-flow: column;
+  }
+  #projecttitle {
+    writing-mode: horizontal-tb;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 25px white;
+    text-orientation: upright;
+    background-clip: text;
+  }
+  .column-proj h3 {
+    padding: 0;
+    margin-bottom: -5px;
+  }
+  .column-proj .info a {
+    padding: 0 40px;
   }
 }
