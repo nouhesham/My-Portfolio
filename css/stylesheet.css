@@ -186,12 +186,12 @@ section {
 .column {
   background-color: #ee82ee;
   border-radius: 10px;
-  width: 21.25em;
+  width: 22em;
   box-shadow: 0px 5px 25px purple;
   padding: 25px;
   margin: 10px;
   cursor: pointer;
-  transition-duration: 0.5s ease;
+  transition-duration: 0.4s ease;
   position: relative;
 }
 
@@ -209,7 +209,6 @@ section {
   color: black;
   font-weight: 1000;
   font-size: 1.3em;
-  /* display: none; */
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background: rgb(255, 255, 255, 0.4);
   position: absolute;
@@ -218,7 +217,7 @@ section {
 }
 .column h3,
 .column img {
-  transition: 200ms ease-in-out;
+  transition: 100ms ease-in-out;
 }
 
 .column .fade {
@@ -231,6 +230,7 @@ section {
 .column:hover .blur {
   filter: blur(5px);
 }
+
 #projecttitle {
   font-size: 2.2em;
   font-weight: 500;
@@ -283,6 +283,7 @@ section {
   margin: 10px;
   overflow: hidden;
 }
+
 .column-proj h3 {
   color: indigo;
   margin: 10px;
@@ -420,7 +421,7 @@ section {
   text-align: center;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1300px) {
   #header {
     background-color: rgb(181, 18, 186);
     width: 100%;
